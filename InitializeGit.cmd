@@ -16,3 +16,4 @@ git remote -v
 REM Pushes the changes in your local repository up to the remote repository you specified as the origin
 git push origin master
 
+REM na naklonovanie pouzit git clone <repo>
