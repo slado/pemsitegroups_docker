@@ -1,10 +1,11 @@
-FROM microsoft/aspnetcore
+FROM microsoft/dotnet:2.1.1-aspnetcore-runtime
+
 
 # Create app directory
 WORKDIR /app
 
 #copy application
-COPY PEM.SiteGroups .
+COPY . .
 
 
 #EXPOSE 8888
