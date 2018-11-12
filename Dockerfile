@@ -9,4 +9,6 @@ COPY . .
 
 
 #EXPOSE 8888
+WORKDIR /app/PEM.SiteGroups
 ENTRYPOINT ["dotnet", "PEM.Configuration.SiteGroups.dll"]
+#RUN ["cmd ", "/c dir /s"]
