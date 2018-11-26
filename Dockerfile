@@ -4,9 +4,11 @@ SHELL ["powershell", "-Command", "$ErrorActionPreference = 'Stop';"]
 # Create app directory
 WORKDIR /app
 
+ARG version
+
 #copy application
 WORKDIR /package 
-RUN Invoke-WebRequest -OutFile package.zip http://sk0050p.datapac.local:5000/api/components/PEM.SiteGroups/1.0.0.0
+RUN $my_var='http://sk0050p.datapac.local:5000/api/components/PEM.SiteGroups/'+[Environment]::GetEnvironmentVariable('version');Invoke-WebRequest -OutFile package.zip -Uri $my_var
 
 #expand packages
 RUN Expand-Archive package.zip /app
